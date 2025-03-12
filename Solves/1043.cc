@@ -30,7 +30,8 @@ int main() {
     bool inside = (v1 % v3) == (v1 % v2) && (v3 % v2) == (v1 % v2);
 
     point pts[4] = { { cx, cy+r }, { cx, cy-r }, { cx-r, cy }, { cx+r, cy } };
-    point m { std::min(x1, x2), std::min(y1, y2) }, M { std::max(x1, x2), std::max(y1, y2) };
+    point m { static_cast<ld>(std::min(x1, x2)), static_cast<ld>(std::min(y1, y2)) },
+          M { static_cast<ld>(std::max(x1, x2)), static_cast<ld>(std::max(y1, y2)) };
 
     for(int i = 0; i < 4; i++) {
         point diff = pts[i] - c;
